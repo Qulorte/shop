@@ -31,10 +31,11 @@
 </style>
 {% extends 'store/base.html' %}
 {% load custom_filters %}
-{% block title %}Популярные товары - Roblox Shop{% endblock %}
+{% load i18n %}
+{% block title %}{% trans "Популярные товары - Roblox Shop" %}{% endblock %}
 
 {% block content %}
-<h1>Популярные товары</h1>
+<h1>{% trans "Популярные товары" %}</h1>
 <div class="row">
     {% for product in products %}
     <div class="col-md-4">
@@ -49,13 +50,21 @@
                     {% if product.id in cart_dict %}
                         <div class="btn-group" role="group">
                             <button class="btn btn-secondary change-quantity" data-product-id="{{ product.id }}" data-action="decrease">-</button>
-                            <button class="btn btn-secondary">Количество: {{ cart_dict|default_if_none:0|get_item:product.id }}</button>
+                            <button class="btn btn-secondary">{% trans "Количество: " %} {{ cart_dict|default_if_none:0|get_item:product.id }}</button>
                             <button class="btn btn-secondary change-quantity" data-product-id="{{ product.id }}" data-action="increase">+</button>
-                            <a href="{% url 'cart' %}" class="btn btn-primary">Перейти в корзину</a>
+                            <a href="{% url 'cart' %}" class="btn btn-primary">{% trans "Перейти в корзину" %}</a>
                         </div>
                     {% else %}
+                    {% if user.is_authenticated %}
                         <button class="btn btn-primary add-to-cart" data-product-id="{{ product.id }}">
-                            Добавить в корзину
+                            {% trans "Добавить в корзину" %}
+                        </button>
+                    {% else %}
+                        <a href="{% url 'login' %}" class="btn btn-secondary">
+                            {% trans "Войти, чтобы добавить в корзину" %}
+                        </a>
+                    {% endif %}
+                
                         </button>
                     {% endif %}
                 </div>
@@ -107,9 +116,9 @@
                         productButtons.innerHTML = `
                             <div class="btn-group" role="group">
                                 <button class="btn btn-secondary change-quantity" data-product-id="${productId}" data-action="decrease">-</button>
-                                <button class="btn btn-secondary">Количество: ${data.quantity}</button>
+                                <button class="btn btn-secondary">Amount: ${data.quantity}</button>
                                 <button class="btn btn-secondary change-quantity" data-product-id="${productId}" data-action="increase">+</button>
-                                <a href="{% url 'cart' %}" class="btn btn-primary">Перейти в корзину</a>
+                                <a href="{% url 'cart' %}" class="btn btn-primary">Go to cart</a>
                             </div>
                         `;
                     } else {
@@ -144,15 +153,15 @@
                         productButtons.innerHTML = `
                             <div class="btn-group" role="group">
                                 <button class="btn btn-secondary change-quantity" data-product-id="${productId}" data-action="decrease">-</button>
-                                <button class="btn btn-secondary">Количество: ${data.quantity}</button>
+                                <button class="btn btn-secondary">Amount: ${data.quantity}</button>
                                 <button class="btn btn-secondary change-quantity" data-product-id="${productId}" data-action="increase">+</button>
-                                <a href="{% url 'cart' %}" class="btn btn-primary">Перейти в корзину</a>
+                                <a href="{% url 'cart' %}" class="btn btn-primary">Go to cart</a>
                             </div>
                         `;
                     } else {
                         productButtons.innerHTML = `
                             <button class="btn btn-primary add-to-cart" data-product-id="${productId}">
-                                Добавить в корзину
+                                Add to cart
                             </button>
                         `;
                     }

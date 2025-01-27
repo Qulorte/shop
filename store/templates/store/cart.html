@@ -1,12 +1,12 @@
 {% extends 'store/base.html' %}
-
-{% block title %}Корзина - Roblox Shop{% endblock %}
+{% load i18n %}
+{% block title %}{% trans "Корзина - Roblox Shop" %}{% endblock %}
 
 {% block content %}
-<h1>Корзина</h1>
+<h1>{% trans "Корзина" %}</h1>
 <div class="row">
     <div class="col-md-8">
-        <h2>Ваши товары</h2>
+        <h2>{% trans "Ваши товары" %}</h2>
         <ul class="list-group">
             {% for item in cart_items %}
             <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -17,23 +17,23 @@
                 </div>
                 <span>{{ item.product.price|floatformat:2 }} Robux</span>
                 <!-- Кнопка для удаления товара -->
-                <button class="btn btn-danger remove-from-cart" data-product-id="{{ item.product.id }}">Удалить</button>
+                <button class="btn btn-danger remove-from-cart" data-product-id="{{ item.product.id }}">{% trans "Удалить" %}</button>
             </li>
             {% empty %}
-            <p>Корзина пуста.</p>
+            <p>{% trans "Корзина пуста." %}</p>
             {% endfor %}
         </ul>
     </div>
 
     <div class="col-md-4">
-        <h2>Итого</h2>
+        <h2>{% trans "Итого" %}</h2>
         <ul class="list-group mb-3">
             <li class="list-group-item d-flex justify-content-between">
-                <span>Общая стоимость:</span>
+                <span>{% trans "Общая стоимость:" %}</span>
                 <strong>{{ total_price|floatformat:2 }} Robux</strong>
             </li>
         </ul>
-        <a href="#" class="btn btn-success btn-lg btn-block" id="checkout-button">Перейти к оплате</a>
+        <a href="#" class="btn btn-success btn-lg btn-block" id="checkout-button">{% trans "Перейти к оплате" %}</a>
     </div>
 </div>
 
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Проверяем, есть ли товары в корзине
         const cartItems = document.querySelectorAll('.list-group-item');
         if (cartItems.length === 1) {
-            alert('Корзина пуста. Добавьте товары в корзину, прежде чем продолжить.');
+            alert('The cart is empty. Add the items to the cart before proceeding.');
             return; // Прерываем выполнение, если корзина пуста
         }
 

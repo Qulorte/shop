@@ -1,12 +1,12 @@
 {% extends 'store/base.html' %}
-
-{% block title %}Корзина - Roblox Shop{% endblock %}
+{% load i18n %}
+{% block title %}Roblox Shop{% endblock %}
 
 {% block content %}
-<h1>Вход</h1>
+<h1>{% trans "Вход" %}</h1>
 <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">Войти</button>
+    <button type="submit" class="btn btn-primary">{% trans "Войти" %}</button>
 </form>
 {% endblock %}

@@ -9,6 +9,7 @@ from django.db.models import Q
 from django.contrib.auth.models import User
 from django.http import HttpResponseForbidden
 from django.urls import reverse
+from django.utils.translation import gettext_lazy as _
 
 def home(request):
     # Получаем только первые 10 товаров
@@ -60,7 +61,13 @@ def register(request):
             return redirect('home')
     else:
         form = UserRegisterForm()
-    return render(request, 'store/register.html', {'form': form})
+    
+    # Добавляем переводы для контекста, если необходимо
+    context = {
+        'form': form,
+        'title': _('Register'),  # Добавляем заголовок
+    }
+    return render(request, 'store/register.html', context)
 
 
 @login_required

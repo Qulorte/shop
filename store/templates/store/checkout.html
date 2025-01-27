@@ -1,18 +1,18 @@
 <!-- store/templates/store/checkout.html -->
 {% extends 'store/base.html' %}
-
-{% block title %}Оплата товаров{% endblock %}
+{% load i18n %}
+{% block title %}{% trans "Оплата товаров" %}{% endblock %}
 
 {% block content %}
-<h1>Оплата товаров</h1>
+<h1>{% trans "Оплата товаров" %}</h1>
 
 <div class="row">
     <div class="col-md-8">
-        <h2>Контактная информация</h2>
+        <h2>{% trans "Контактная информация" %}</h2>
         <form id="checkout-form" method="post">
             {% csrf_token %}
             <div class="form-group">
-                <label for="email">Электронная почта:</label>
+                <label for="email">{% trans "Электронная почта:" %}</label>
                 <input type="email" class="form-control" id="email" name="email" list="email-list" required>
                 <datalist id="email-list">
                     {% for email in emails %}
@@ -21,23 +21,23 @@
                 </datalist>
             </div>
             <div class="form-group">
-                <label for="game_username">Username в Roblox:</label>
+                <label for="game_username">{% trans "Username в Roblox:" %}</label>
                 <input type="text" class="form-control" id="game_username" name="game_username" required>
             </div>
             <div class="form-group">
-                <label for="telegram_username">Username в Telegram:</label>
+                <label for="telegram_username">{% trans "Username в Telegram:" %}</label>
                 <input type="text" class="form-control" id="telegram_username" name="telegram_username" required>
             </div>
             <div class="form-group form-check">
                 <input type="checkbox" class="form-check-input" id="agree_terms" name="agree_terms" required>
                 <label class="form-check-label" for="agree_terms">
-                    Я подтверждаю, что верно указал контактные данные и Username Roblox для получения товара. В случае неверно указанных контактных данных магазин не несет ответственности за задержку или невозможность доставки заказа!
+                    {% trans "Я подтверждаю, что верно указал контактные данные и Username Roblox для получения товара. В случае неверно указанных контактных данных магазин не несет ответственности за задержку или невозможность доставки заказа!" %}
                 </label>
             </div>
         </form>
 
 
-        <h2>Ваши товары</h2>
+        <h2>{% trans "Ваши товары" %}</h2>
         <ul class="list-group">
             {% for item in cart_items %}
             <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -50,11 +50,11 @@
             </li>
             {% endfor %}
         </ul>
-        <h3>Итого: {{ total_price|floatformat:2 }} Robux</h3>
+        <h3>{% trans "Итого: " %} {{ total_price|floatformat:2 }} Robux</h3>
     </div>
 
     <div class="col-md-4">
-        <button type="submit" form="checkout-form" class="btn btn-success btn-lg btn-block" id="pay-button">Оплатить</button>
+        <button type="submit" form="checkout-form" class="btn btn-success btn-lg btn-block" id="pay-button">{% trans "Оплатить" %}</button>
     </div>
 </div>
 
@@ -74,7 +74,7 @@
     
             // Проверка заполнения всех полей
             if (!email || !gameUsername || !telegramUsername || !agreeTerms) {
-                alert('Заполните все поля и подтвердите согласие с условиями.');
+                alert('Fill out all fields and agree to the terms.');
                 return;  // Прерываем выполнение, если данные не валидны
             }
     
@@ -94,7 +94,7 @@
                     alert(data.message);
                 }
             })
-            .catch(error => console.error('Ошибка:', error));
+            .catch(error => console.error('Error:', error));
         });
     });
 </script>

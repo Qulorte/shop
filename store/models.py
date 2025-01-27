@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils.translation import gettext_lazy as _
+
 
 class Product(models.Model):
     name = models.CharField(max_length=255)
@@ -31,12 +33,13 @@ class Order(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)  # Дата и время создания заказа
     link_sent = models.BooleanField(default=False)
     STATUS_CHOICES = [
-        ("Created", "Created"),
-        ("In progress", "In Progress"),
-        ("Completed", "Completed"),
-        ("Rejected", "Rejected"),
+        ("Created", _("Created")),
+        ("In progress", _("In Progress")),
+        ("Completed", _("Completed")),
+        ("Rejected", _("Rejected")),
     ]
-    status = models.CharField(max_length=255, choices=STATUS_CHOICES, default="created")
+    status = models.CharField(max_length=255, choices=STATUS_CHOICES, default="Created")
+
 
     def __str__(self):
         return f"Order #{self.id} от {self.user.username}"

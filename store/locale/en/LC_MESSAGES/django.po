@@ -1,0 +1,281 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-30 20:35+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: store/models.py:36
+msgid "Created"
+msgstr "Создан"
+
+#: store/models.py:37
+msgid "In Progress"
+msgstr ""
+
+#: store/models.py:38
+msgid "Completed"
+msgstr ""
+
+#: store/models.py:39
+msgid "Rejected"
+msgstr ""
+
+#: store/templates/store/base.html:38
+#: store/templates/store/product_list.html:36
+#: store/templates/store/product_list.html:40
+msgid "Все товары"
+msgstr "All products"
+
+#: store/templates/store/base.html:44 store/templates/store/cart.html:6
+msgid "Корзина"
+msgstr "Cart"
+
+#: store/templates/store/base.html:47 store/templates/store/my_orders.html:24
+msgid "Мои заказы"
+msgstr "My orders"
+
+#: store/templates/store/base.html:55
+msgid "Выйти"
+msgstr "Logout"
+
+#: store/templates/store/base.html:60 store/templates/store/login.html:10
+#: store/templates/store/register.html:15
+msgid "Войти"
+msgstr "Login"
+
+#: store/templates/store/base.html:63 store/templates/store/register.html:4
+#: store/templates/store/register.html:7
+msgid "Регистрация"
+msgstr "Registration"
+
+#: store/templates/store/base.html:96
+msgid "© 2024 Roblox Shop. Все права защищены."
+msgstr "© 2024 Roblox Shop. All rights reserved."
+
+#: store/templates/store/cart.html:3
+#, fuzzy
+msgid "Корзина - Roblox Shop"
+msgstr "Cart - Roblox Shop"
+
+#: store/templates/store/cart.html:9 store/templates/store/checkout.html:40
+msgid "Ваши товары"
+msgstr "Your products"
+
+#: store/templates/store/cart.html:20
+msgid "Удалить"
+msgstr "Delete"
+
+#: store/templates/store/cart.html:23
+msgid "Корзина пуста."
+msgstr "The cart is empty."
+
+#: store/templates/store/cart.html:29
+msgid "Итого"
+msgstr "Total"
+
+#: store/templates/store/cart.html:32
+msgid "Общая стоимость:"
+msgstr "Total cost:"
+
+#: store/templates/store/cart.html:36
+msgid "Перейти к оплате"
+msgstr "Proceed to payment"
+
+#: store/templates/store/checkout.html:4 store/templates/store/checkout.html:7
+msgid "Оплата товаров"
+msgstr "Payment for goods"
+
+#: store/templates/store/checkout.html:11
+msgid "Контактная информация"
+msgstr "Contact information"
+
+#: store/templates/store/checkout.html:15
+msgid "Электронная почта:"
+msgstr "E-mail:"
+
+#: store/templates/store/checkout.html:24
+msgid "Username в Roblox:"
+msgstr "Username in Roblox:"
+
+#: store/templates/store/checkout.html:28
+msgid "Username в Telegram:"
+msgstr "Username in Telegram:"
+
+#: store/templates/store/checkout.html:34
+msgid ""
+"Я подтверждаю, что верно указал контактные данные и Username Roblox для "
+"получения товара. В случае неверно указанных контактных данных магазин не "
+"несет ответственности за задержку или невозможность доставки заказа!"
+msgstr ""
+"I confirm that I have provided the correct contact information and Roblox "
+"Username for receipt of the goods. In case of incorrect contact information, "
+"the store does not is responsible for the delay or impossibility of delivery "
+"of the order!"
+
+#: store/templates/store/checkout.html:53
+msgid "Итого: "
+msgstr "Total: "
+
+#: store/templates/store/checkout.html:57
+msgid "Оплатить"
+msgstr "Pay"
+
+#: store/templates/store/home.html:35
+msgid "Популярные товары - Roblox Shop"
+msgstr "Popular Products - Roblox Shop"
+
+#: store/templates/store/home.html:38
+msgid "Популярные товары"
+msgstr "Popular Products"
+
+#: store/templates/store/home.html:53
+msgid "Количество: "
+msgstr "Amount:"
+
+#: store/templates/store/home.html:55
+msgid "Перейти в корзину"
+msgstr "Go to cart"
+
+#: store/templates/store/home.html:60
+#: store/templates/store/product_list.html:63
+msgid "Добавить в корзину"
+msgstr "Add to cart:"
+
+#: store/templates/store/home.html:64
+#: store/templates/store/product_list.html:67
+msgid "Войти, чтобы добавить в корзину"
+msgstr "Login to add to cart"
+
+#: store/templates/store/login.html:6
+msgid "Вход"
+msgstr "Login"
+
+#: store/templates/store/my_orders.html:30
+msgid "Номер заказа"
+msgstr "Order number"
+
+#: store/templates/store/my_orders.html:31
+msgid "Цена"
+msgstr "Price"
+
+#: store/templates/store/my_orders.html:32
+msgid "Товары"
+msgstr "Products"
+
+#: store/templates/store/my_orders.html:33
+msgid "Статус"
+msgstr "Status"
+
+#: store/templates/store/my_orders.html:61
+#, python-format
+msgid ""
+"\n"
+"    У тебя еще нет заказов. Скорее <a href=\"%(url)s\">выбирай товары</a>!\n"
+"    "
+msgstr ""
+"\n"
+"   You don't have any orders yet. Hurry <a href=\"%(url)s\">choose products</"
+"a>!\n"
+" "
+
+#: store/templates/store/payment_confirmation.html:7
+#: store/templates/store/payment_confirmation.html:9
+#: store/templates/store/payment_confirmation.html:11
+#: store/templates/store/payment_confirmation.html:13
+msgid "Заказ"
+msgstr "Order"
+
+#: store/templates/store/payment_confirmation.html:7
+msgid "СОЗДАН"
+msgstr "CREATED"
+
+#: store/templates/store/payment_confirmation.html:9
+msgid "ВЫПОЛНЯЕТСЯ"
+msgstr "IN PROGRESS"
+
+#: store/templates/store/payment_confirmation.html:11
+msgid "ЗАВЕРШЕН"
+msgstr "COMPLETED"
+
+#: store/templates/store/payment_confirmation.html:13
+msgid "ОТКЛОНЕН"
+msgstr "REJECTED"
+
+#: store/templates/store/payment_confirmation.html:18
+msgid ""
+"В ближайшее время вам будет направлено на указанную электронную почту ссылка "
+"для оплаты. Вам необходимо перейти по ссылке и приобрести gamepass. После "
+"успешной покупки gamepass прикрепите изображение с его покупкой. Примерное "
+"время ожидания 5-10 минут."
+msgstr ""
+"A payment link will soon be sent to your email address. You need to follow "
+"the link and purchase a gamepass. After successfully purchasing a gamepass, "
+"attach an image with your purchase. Approximate waiting time is 5-10 minutes."
+
+#: store/templates/store/payment_confirmation.html:23
+msgid "Ссылка для покупки была отправлена на ваш электронный адрес"
+msgstr "A purchase link has been sent to your email address"
+
+#: store/templates/store/payment_confirmation.html:23
+msgid ""
+"Для завершения покупки купите gamepass по ссылке, отправьте ответное письмо, "
+"прикрепив изображение, подтверждающее покупку и нажмите кнопку 'Я купил'."
+msgstr ""
+"To complete your purchase, purchase a gamepass using the link and send a "
+"response email, attaching an image confirming your purchase and clicking the "
+"button 'I bought Gamepass' "
+
+#: store/templates/store/payment_confirmation.html:25
+msgid "Я купил"
+msgstr "I bought Gamepass"
+
+#: store/templates/store/payment_confirmation.html:29
+msgid "Товар был успешно доставлен. Спасибо за покупку!"
+msgstr "The item was successfully delivered. Thanks for your purchase!"
+
+#: store/templates/store/payment_confirmation.html:34
+msgid "Ваш заказ был отменен по техническим причинам."
+msgstr "Your order has been canceled due to technical reasons."
+
+#: store/templates/store/payment_confirmation.html:53
+msgid ""
+"Спасибо за покупку! В ближайшее время наш администратор проверит информацию "
+"и отправит вам товар по игровой почте (Post Office)"
+msgstr ""
+"Thanks for your purchase! In the near future, our administrator will check "
+"the information and send you the goods by game mail (Post Office)"
+
+#: store/templates/store/product_list.html:56
+msgid "Ammount: "
+msgstr ""
+
+#: store/templates/store/product_list.html:58
+msgid "Go to cart"
+msgstr ""
+
+#: store/templates/store/register.html:11
+msgid "Зарегистрироваться"
+msgstr "Register"
+
+#: store/templates/store/register.html:15
+msgid "Уже зарегистрированы?"
+msgstr "Already registered?"
+
+#~ msgid "Заказ "
+#~ msgstr "Order"

@@ -1,41 +1,37 @@
 {% extends 'store/base.html' %}
-
+{% load i18n %}
 {% block title %}Заказ #{{ order.id }}{% endblock %}
 
 {% block content %}
 {% if order.status == 'Created' %}
-<h1>Заказ #{{ order.id }} СОЗДАН</h1>
+<h1>{% trans "Заказ" %} #{{ order.id }} {% trans "СОЗДАН" %}</h1>
 {% elif order.status == 'In progress' %}
-<h1>Заказ #{{ order.id }} ВЫПОЛНЯЕТСЯ</h1>
+<h1>{% trans "Заказ" %} #{{ order.id }} {% trans "ВЫПОЛНЯЕТСЯ" %}</h1>
 {% elif order.status == 'Completed' %}
-<h1>Заказ #{{ order.id }} ЗАВЕРШЕН</h1>
+<h1>{% trans "Заказ" %} #{{ order.id }} {% trans "ЗАВЕРШЕН" %}</h1>
 {% elif order.status == 'Rejected' %}
-<h1>Заказ #{{ order.id }} ОТКЛОНЕН</h1>
+<h1>{% trans "Заказ" %} #{{ order.id }} {% trans "ОТКЛОНЕН" %}</h1>
 {% endif %}
 
 {% if order.status == 'Created' %}
     <div class="alert alert-info">
-        В ближайшее время вам будет направлено на указанную электронную почту ссылка для оплаты. 
-        Вам необходимо перейти по ссылке и приобрести gamepass. После успешной покупки gamepass 
-        прикрепите изображение с его покупкой. Примерное время ожидания 5-10 минут.
+        {% trans "В ближайшее время вам будет направлено на указанную электронную почту ссылка для оплаты. Вам необходимо перейти по ссылке и приобрести gamepass. После успешной покупки gamepass прикрепите изображение с его покупкой. Примерное время ожидания 5-10 минут." %}
     </div>
 
 {% elif order.status == 'In progress' %}
     <div class="alert alert-info">
-        Ссылка для покупки была отправлена на ваш электронный адрес {{ order.email }}. Для завершения покупки 
-        купите gamepass по ссылке, отправьте ответное письмо, прикрепив изображение, подтверждающее покупку 
-        и нажмите кнопку "Я купил".
+        {% trans "Ссылка для покупки была отправлена на ваш электронный адрес" %} {{ order.email }}. {% trans "Для завершения покупки купите gamepass по ссылке, отправьте ответное письмо, прикрепив изображение, подтверждающее покупку и нажмите кнопку 'Я купил'." %}
     </div>
-    <button id="bought-button" class="btn btn-primary">Я купил</button>
+    <button id="bought-button" class="btn btn-primary">{% trans "Я купил" %}</button>
 
 {% elif order.status == 'Completed' %}
     <div class="alert alert-success">
-        Товар был успешно доставлен. Спасибо за покупку!
+        {% trans "Товар был успешно доставлен. Спасибо за покупку!" %}
     </div>
 
 {% elif order.status == 'Rejected' %}
     <div class="alert alert-danger">
-        Ваш заказ был отменен по техническим причинам.
+        {% trans "Ваш заказ был отменен по техническим причинам." %}
     </div>
 {% endif %}
 
@@ -54,7 +50,7 @@
 </script>
 
 <div id="confirmation-message" style="display: none;">
-    <p>Спасибо за покупку! В ближайшее время наш администратор проверит информацию и отправит вам товар по игровой почте (Post Office)</p>
+    <p>{% trans "Спасибо за покупку! В ближайшее время наш администратор проверит информацию и отправит вам товар по игровой почте (Post Office)" %}</p>
 </div>
 {% endblock %}
 

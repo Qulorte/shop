@@ -18,18 +18,19 @@
 </style>
 
 {% extends 'store/base.html' %}
+{% load i18n %}
 
 {% block content %}
-<h1>Мои заказы</h1>
+<h1>{% trans "Мои заказы" %}</h1>
 
 {% if orders.exists %}
     <table class="table">
         <thead>
             <tr>
-                <th>Номер заказа</th>
-                <th>Цена</th>
-                <th>Товары</th>
-                <th>Статус</th>
+                <th>{% trans "Номер заказа" %}</th>
+                <th>{% trans "Цена" %}</th>
+                <th>{% trans "Товары" %}</th>
+                <th>{% trans "Статус" %}</th>
             </tr>
         </thead>
         <tbody>
@@ -56,6 +57,11 @@
         </tbody>
     </table>
 {% else %}
-    <p >У тебя еще нет заказов. Скорее <a href="{% url 'product_list' %}">выбирай товары</a>!</p>
+    {% url 'product_list' as product_list_url %}
+    {% blocktrans with url=product_list_url %}
+    У тебя еще нет заказов. Скорее <a href="{{ url }}">выбирай товары</a>!
+    {% endblocktrans %}
 {% endif %}
+
+
 {% endblock %}
